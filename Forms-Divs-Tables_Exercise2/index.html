@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Top 3 Programming Languages</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>Month</th>
+            <th>Day</th>
+            <th>Year</th>
+        </tr>
+        <tr>
+            <td>March</td>
+            <td>25th</td>
+            <td>2021</td>
+        </tr>
+    </table>
+    <section>
+        <a href="https://www.python.org/" target="_blank"><img src="/imgs/Python_Logo.png" alt="Python Logo"></a>
+        <h1>Python</h1>
+        <p>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its
+            high-level built in data structures, combined with dynamic typing and dynamic binding, make it very
+            attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect
+            existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore
+            reduces the cost of program maintenance. Python supports modules and packages, which encourages program
+            modularity and code reuse. The Python interpreter and the extensive standard library are available in source
+            or binary form without charge for all major platforms, and can be freely distributed.</p>
+        <ul>
+            <li>Python supports multiple assignments in one statement
+                Python will let you assign the same value to multiple variables in one statement. It will also let you
+                assign values to multiple variables at once.
+                <br>
+                <br>
+                This also means swapping in Python is quicker and can be done in only 1 line of code:
+            </li>
+            <pre>
+                <code>
+                    >>> a, b = 7, 8
+                    >>> a, b = b, a
+                    >>> print(a,b)
+                    8 7
+                </code>
+            </pre>
+            <li>
+                With slicing, it’s easier to reverse a list
+                If we slice a list of values from starting to end but with a step of -1, we get the list right to left
+                (reversed).
+            </li>
+            <pre>
+                <code>
+                    >>> nums = [1,2,3,4,5,6,7,8,9]
+                    >>> nums = [::-1]
+                    [9, 8, 7, 6, 5, 4, 3, 2, 1]
+                </code>
+            </pre>
+            <li>
+                To know all the functions in a module we can assign the functions list to a variable, and then print the
+                variable.
+            </li>
+            <pre>
+                <code>
+                    >>> import math
+                    >>> dir(math)
+
+                    ['__doc__', '__name__', '__package__', 'acos', 'acosh',
+                    'asin', 'asinh', 'atan', 'atan2', 'atanh', 'ceil', 'copysign',
+                    'cos', 'cosh', 'degrees', 'e', 'erf', 'erfc', 'exp', 'expm1',
+                    'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma',
+                    'hypot', 'isinf', 'isnan', 'ldexp', 'lgamma', 'log', 'log10',
+                    'log1p', 'modf', 'pi', 'pow', 'radians', 'sin', 'sinh', 'sqrt',
+                    'tan', 'tanh', 'trunc']
+                </code>
+            </pre>
+        </ul>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
+            <img src="/imgs/JS_Logo.png" alt="JavaScript Logo">
+        </a>
+        <h1>JavaScript</h1>
+        <p>JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class
+            functions. While it is most well-known as the scripting language for Web pages, many non-browser
+            environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat. JavaScript is a
+            prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative,
+            and declarative (e.g. functional programming) styles. - Mozilla</p>
+        <ul>
+            <li>
+                In JavaScript, null is an object. However, null is not considered an "instance" of an object...
+                <pre>
+                    <code>
+                        alert(typeof null); //alerts 'object'
+                        alert(null instanceof Object); //evaluates false
+                    </code>
+                </pre>
+            </li>
+            <li>
+                NaN stands for "Not a Number", counter-intuitively however, comparing NaN to itself evaluates to
+                "false". n fact NaN is not equal to anything. The only way to confirm that something is NaN is via the
+                function isNaN().
+                <pre>
+                    <code>
+                        alert(typeof NaN); //alerts 'Number'
+                        alert(NaN === NaN); //evaluates false
+                    </code>
+                </pre>
+            </li>
+            <li>
+                In JavaScript, values are either "truthy" or "falsy". False, zero, null, undefined, empty strings and
+                NaN are all "falsy". The rest are "truthy".
+            </li>
+            <pre>
+                <code>
+                    alert(new Array() == false); //evaluates true
+                    var someVar = 0;
+                    alert(someVar == false); //evaluates true
+                </code>
+            </pre>
+        </ul>
+
+        <a href="https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/" target="_blank"><img
+                src="/imgs/CSharp_Logo.svg" alt="C# Logo"></a>
+        <h1>C#</h1>
+        <p>C# (pronounced "See Sharp") is a modern, object-oriented, and type-safe programming language. C# enables
+            developers to build many types of secure and robust applications that run in the .NET ecosystem. C# has its
+            roots in the C family of languages and will be immediately familiar to C, C++, Java, and JavaScript
+            programmers.</p>
+        <ul>
+            <li>
+                Enums can have extension methods
+                Extension methods provide a way to write methods for existing classes that other people on your team
+                might discover and use. Given that enums are classes like any other, it shouldn’t be too surprising that
+                you can extend them, like:
+            </li>
+            <pre>
+                <code>
+                    enum Duration { Day, Week, Month };
+
+                    static class DurationExtensions 
+                    {
+                        public static DateTime From(this Duration duration, DateTime dateTime)
+                        {
+                            switch(duration) 
+                            {
+                                case Day:   return dateTime.AddDays(1);
+                                case Week:  return dateTime.AddDays(7);
+                                case Month: return dateTime.AddMonths(1);
+                                default:    throw new ArgumentOutOfRangeException("duration");
+                            }
+                        }
+                    }
+                </code>
+            </pre>
+            <li>
+                Order of static variable declaration in your source code matters
+                Some people insist that variables be ordered alphabetically,
+                and there are tools around that can reorder for you. However,
+                there is one scenario where reordering can break your app.
+            </li>
+            <pre>
+                <code>
+                    static class Program 
+                    {
+                        private static int a = 5;
+                        private static int b = a;
+                      
+                        static void Main(string[] args) 
+                        {
+                            Console.WriteLine(b);
+                        }
+                    }
+                </code>
+            </pre>
+            <p>This prints the value 5. Reorder the a and b declarations, and it prints 0.</p>
+            <li>
+                Private instance variables of a class can be accessed by other instances. It’s easy to think of private
+                as meaning only this instance of a class can access them. The reality is it means only this class can
+                access it - including other instances of this class. It’s quite useful when writing some comparison
+                methods.
+            </li>
+            <pre>
+                <code>
+                    class KeepSecret 
+                    {
+                        private int someSecret;
+
+                        public bool Equals(KeepSecret other) 
+                        {
+                          return other.someSecret == someSecret;
+                        }
+                    }
+                </code>
+            </pre>
+        </ul>
+    </section>
+</body>
+
+</html>
